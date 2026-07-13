@@ -23,7 +23,7 @@ Currently focused on:
 * I enjoy being intellectually challenged.
 * I don't want agreement — I want growth.
 
-# 🛠️ Tech Stack
+# Tech Stack
 ```
 •	HTML5.
 •	CSS3.
