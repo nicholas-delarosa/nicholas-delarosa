@@ -73,11 +73,15 @@ Soy desarrollador de software de Colombia. Empecé con HTML, CSS y JavaScript en
 
 <img src="assets/header-es-contacto.svg" width="100%" alt="Contacto" />
 
-```
-* ACT ▸ Correo      nicholasandresdelarosarivera@hotmail.com
-* ACT ▸ LinkedIn    linkedin.com/in/nicholas-andres-de-la-rosa-rivera-2820a6360
-* ACT ▸ WhatsApp    +57 304 428 3435
-```
+<img src="assets/contacto-es.svg" width="100%" alt="* ¡Un reclutador se acerca! Nicholas está disponible para trabajar. Elige un ACT para ponerte en contacto." />
+
+<p align="center">
+  <a href="mailto:nicholasandresdelarosarivera@hotmail.com"><img src="assets/act-es-mail.svg" width="32%" alt="Correo" /></a>
+  <a href="https://www.linkedin.com/in/nicholas-andres-de-la-rosa-rivera-2820a6360"><img src="assets/act-es-linkedin.svg" width="32%" alt="LinkedIn" /></a>
+  <a href="https://wa.me/573044283435"><img src="assets/act-es-chat.svg" width="32%" alt="WhatsApp" /></a>
+</p>
+
+<p align="center"><sub>* O cópialos a mano: <code>nicholasandresdelarosarivera@hotmail.com</code> · <code>+57 304 428 3435</code></sub></p>
 
 Estoy abierto a ofertas de trabajo, proyectos de código creativo, colaboraciones de traducción o cualquier cosa con sabor a videojuego. Escríbeme sin miedo.
 
@@ -146,11 +150,15 @@ I'm a software developer from Colombia. I started out with HTML, CSS and JavaScr
 
 <img src="assets/header-en-contact.svg" width="100%" alt="Contact" />
 
-```
-* ACT ▸ Email       nicholasandresdelarosarivera@hotmail.com
-* ACT ▸ LinkedIn    linkedin.com/in/nicholas-andres-de-la-rosa-rivera-2820a6360
-* ACT ▸ WhatsApp    +57 304 428 3435
-```
+<img src="assets/contact-en.svg" width="100%" alt="* A recruiter draws near! Nicholas is open to work. Pick an ACT to get in touch." />
+
+<p align="center">
+  <a href="mailto:nicholasandresdelarosarivera@hotmail.com"><img src="assets/act-en-mail.svg" width="32%" alt="Email" /></a>
+  <a href="https://www.linkedin.com/in/nicholas-andres-de-la-rosa-rivera-2820a6360"><img src="assets/act-en-linkedin.svg" width="32%" alt="LinkedIn" /></a>
+  <a href="https://wa.me/573044283435"><img src="assets/act-en-chat.svg" width="32%" alt="WhatsApp" /></a>
+</p>
+
+<p align="center"><sub>* Or copy them by hand: <code>nicholasandresdelarosarivera@hotmail.com</code> · <code>+57 304 428 3435</code></sub></p>
 
 I'm open to job offers, creative coding projects, translation work or anything with a video game flavor. Feel free to reach out.
 

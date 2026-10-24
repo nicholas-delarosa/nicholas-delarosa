@@ -279,6 +279,46 @@ def divider():
     write('divider.svg', svg(W, H, body, '', '—'))
 
 
+# ---------------------------------------------------------------- Botones de batalla (contacto)
+
+ICONS = {
+    'mail': ['############', '##........##', '#.#......#.#', '#..#....#..#',
+             '#...#..#...#', '#....##....#', '#..........#', '############'],
+    'linkedin': ['##########', '#........#', '#.#......#', '#........#', '#.#.###..#',
+                 '#.#.#..#.#', '#.#.#..#.#', '#.#.#..#.#', '#........#', '##########'],
+    'chat': ['..######..', '.#......#.', '#........#', '#.##.##.##', '#........#',
+             '.#......#.', '..#####...', '.##.......', '#.........'],
+}
+ORANGE = '#ff9f2e'
+
+
+def pixel_icon(rows, x, y, px, color):
+    rects = ''.join(f'<rect x="{x + cx * px}" y="{y + cy * px}" width="{px}" height="{px}"/>'
+                    for cy, row in enumerate(rows) for cx, c in enumerate(row) if c == '#')
+    return f'<g fill="{color}">{rects}</g>'
+
+
+def battle_button(name, label, icon, index, total):
+    """Botón del menú de batalla. El alma recorre los botones en orden, como si alguien eligiera."""
+    W, H, px = 320, 84, 5
+    rows = ICONS[icon]
+    ix, iy = 30, (H - len(rows) * px) // 2
+    delay = -((total - index) % total)
+    css = fonts_css('DTM Sans') + (
+        f'@keyframes sel{{0%{{opacity:1}}{100 / total:.2f}%,100%{{opacity:0}}}}'
+        f'.sel{{opacity:0;animation:sel {total}s step-end infinite {delay}s}}'
+        '@media (prefers-reduced-motion:reduce){.sel{animation:none}}')
+
+    def state(color, glyph):
+        return (f'<rect x="3" y="3" width="{W - 6}" height="{H - 6}" fill="#000" stroke="{color}" stroke-width="6"/>'
+                f'{glyph}<text x="{W / 2 + 34}" y="{H / 2 + 13}" text-anchor="middle" font-family="DTM Sans" '
+                f'font-size="38" letter-spacing="2" fill="{color}">{esc(label)}</text>')
+
+    body = (state(ORANGE, pixel_icon(rows, ix, iy, px, ORANGE))
+            + f'<g class="sel">{state(YELLOW, soul(ix + 2, H / 2 - 22, 44))}</g>')
+    write(name, svg(W, H, body, css, label))
+
+
 if __name__ == '__main__':
     banner()
     divider()
@@ -322,6 +362,20 @@ if __name__ == '__main__':
         'status': 'Open to work', 'skills': 'SKILLS',
         'data': 'Data/DevOps', 'tools': 'Tools',
     })
+
+    dialogue('contacto-es.svg', [
+        '* ¡Un reclutador se acerca!',
+        '* Nicholas está disponible para trabajar.',
+        '* Elige un ACT para ponerte en contacto.',
+    ], 'Un reclutador se acerca. Nicholas está disponible para trabajar.')
+    dialogue('contact-en.svg', [
+        '* A recruiter draws near!',
+        '* Nicholas is open to work.',
+        '* Pick an ACT to get in touch.',
+    ], 'A recruiter draws near. Nicholas is open to work.')
+    for lang, labels in {'es': ('CORREO', 'LINKEDIN', 'WHATSAPP'), 'en': ('EMAIL', 'LINKEDIN', 'WHATSAPP')}.items():
+        for i, (label, icon) in enumerate(zip(labels, ('mail', 'linkedin', 'chat'))):
+            battle_button(f'act-{lang}-{icon}.svg', label, icon, i, 3)
 
     footer('footer-es.svg', '* (El poder del código limpio brilla dentro de ti.)', '* Progreso guardado. ¡Gracias por pasar!')
     footer('footer-en.svg', '* (The power of clean code shines within you.)', '* Progress saved. Thanks for stopping by!')
